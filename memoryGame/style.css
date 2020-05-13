@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600;800&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#ACFCD9;
+    color: white;
+    font-family: 'Baloo Paaji 2';
+}
+img{
+   margin: 1rem; 
+   border-radius: 1rem;
+   transition: all 500ms;
+}
+h1,h3{
+    margin: 0;
+}
+#restart{
+    border-radius: 1rem;
+    font-family: inherit;
+    background-color: rgb(212, 255, 253);
+}
+#restart:focus{
+    outline: none;
+}
+.heading{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: large;
+    background-color: #55D6BE;
+}
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 400px;
+    margin: 1rem auto;
+}
+@keyframes flip{
+    0%{
+        transform: rotateY(0deg);
+    }
+    25%{
+        transform: rotateY(45deg);
+    }
+    50%{
+        transform: rotateY(90deg);
+    }
+    75%{
+        transform: rotateY(135deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+}
