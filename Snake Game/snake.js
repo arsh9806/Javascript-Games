@@ -3,8 +3,9 @@ function Snake(){
     this.y=0;
     this.xSpeed = 1;
     this.ySpeed = 0;
-    this.total = 0;
-    this.tail = [];
+    this.total = 1;
+    this.tail = [{x:this.x, y: this.y}];
+    this.previousDirection = "Right";
     this.draw = function() {
         context.fillStyle='rgb(90,90,90)';
         for(let i=0;i<this.tail.length;i++){
@@ -37,20 +38,35 @@ function Snake(){
     this.changeDirection = function(direction){
         switch(direction){
             case "Up":
-                this.xSpeed = 0;
-                this.ySpeed = -1;
+                if(this.previousDirection != "Down"){
+                    this.xSpeed = 0;
+                    this.ySpeed = -1;
+                    this.previousDirection = "Up";
+                }
                 break;
             case "Down":
-                this.xSpeed = 0;
-                this.ySpeed = 1;
+                if(this.previousDirection != "Up"){
+                    this.xSpeed = 0;
+                    this.ySpeed = 1;
+                    this.previousDirection = "Down";
+
+                }
                 break;
             case "Right":
+                if(this.previousDirection != "Left"){
                 this.xSpeed = 1;
                 this.ySpeed = 0;
+                this.previousDirection = "Right";
+
+                }
                 break;
             case "Left":
+                if(this.previousDirection != "Right"){
                 this.xSpeed = -1;
                 this.ySpeed = 0;
+                this.previousDirection = "Left";
+
+                }
                 break;
             }
 
